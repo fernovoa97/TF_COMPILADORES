@@ -1,0 +1,90 @@
+#include <iostream>
+#include <fstream>
+#include <map>
+#include "antlr4-runtime.h"
+#include "generated/PruebaLexer.h"
+#include "generated/PruebaParser.h"
+#include "generated/PruebaBaseVisitor.h"
+
+using namespace antlr4;
+
+class Prueba : public PruebaBaseVisitor {
+public:
+    std::map<std::string, int> variables;
+
+    virtual antlrcpp::Any visitAsignacion(PruebaParserParser::AsignacionContext *context) override {
+        std::string variable = context->IDENTIFICADOR()->getText();
+        int valor = visit(context->expresion());
+        variables[variable] = valor;
+        return 0;
+    }
+
+    virtual antlrcpp::Any visitExpresion(PruebaParser::ExpresionContext *context) override {
+        if (context->constante()) {
+            return visit(context->constante());
+        } else if (context->IDENTIFICADOR()) {
+            std::string variable = context->IDENTIFICADOR()->getText();
+            return variables[variable];
+        } else if (context->llamadaFuncion()) {
+            return visit(context->llamadaFuncion());
+        } else if (context->expresion().size() == 2) {
+            int izquierda = visit(context->expresion(0));
+            int derecha = visit(context->expresion(1));
+            if (context->multOp()) {
+                if (context->multOp()->getText() == "*") return izquierda * derecha;
+                if (context->multOp()->getText() == "/") return izquierda / derecha;
+                if (context->multOp()->getText() == "&") return izquierda & derecha;
+            } else if (context->addOp()) {
+                if (context->addOp()->getText() == "+") return izquierda + derecha;
+                if (context->addOp()->getText() == "-") return izquierda - derecha;
+            } else if (context->compareOp()) {
+                if (context->compareOp()->getText() == "==") return izquierda == derecha;
+                if (context->compareOp()->getText() == "!=") return izquierda != derecha;
+                if (context->compareOp()->getText() == ">") return izquierda > derecha;
+                if (context->compareOp()->getText() == "<") return izquierda < derecha;
+                if (context->compareOp()->getText() == ">=") return izquierda >= derecha;
+                if (context->compareOp()->getText() == "<=") return izquierda <= derecha;
+            } else if (context->boolOp()) {
+                if (context->boolOp()->getText() == "y") return izquierda && derecha;
+                if (context->boolOp()->getText() == "o") return izquierda || derecha;
+                
+            }
+        } else if (context->expresion().size() == 1) {
+            int valor = visit(context->expresion(0));
+            if (context->getText()[0] == '!') return !valor;
+            return valor;
+        }
+        return 0;
+    }
+
+    virtual antlrcpp::Any visitConstante(PruebaParser::ConstanteContext *context) override {
+        if (context->ENTERO()) {
+            return std::stoi(context->ENTERO()->getText());
+        } else if (context->DECIMAL()) {
+            return std::stod(context->DECIMAL()->getText());
+        } else if (context->BOOLEANO()) {
+            return context->BOOLEANO()->getText() == "verdadero";
+        }
+        return 0;
+    }
+};
+
+int main(int argc, const char* argv[]) {
+    std::ifstream stream;
+    stream.open("input.txt");
+    ANTLRInputStream input(stream);
+    PruebaLexer lexer(&input);
+    CommonTokenStream tokens(&lexer);
+    PruebaParser parser(&tokens);
+
+    PruebaParser::ProgramaContext* tree = parser.programa();
+
+    Prueba1 prueba1;
+    prueba1.visit(tree);
+
+    for (const auto& variable : prueba1.variables) {
+        std::cout << variable.first << " = " << variable.second << std::endl;
+    }
+
+    return 0;
+}
