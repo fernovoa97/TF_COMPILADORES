@@ -33,6 +33,78 @@ using IToken = Antlr4.Runtime.IToken;
 [System.CLSCompliant(false)]
 public interface ISimpleVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <summary>
+	/// Visit a parse tree produced by the <c>comparasionExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitComparasionExpression([NotNull] SimpleParser.ComparasionExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by the <c>parenthesizedExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitParenthesizedExpression([NotNull] SimpleParser.ParenthesizedExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by the <c>constantExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitConstantExpression([NotNull] SimpleParser.ConstantExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by the <c>additiveExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAdditiveExpression([NotNull] SimpleParser.AdditiveExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by the <c>identifierExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitIdentifierExpression([NotNull] SimpleParser.IdentifierExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by the <c>functionCallExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitFunctionCallExpression([NotNull] SimpleParser.FunctionCallExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by the <c>notExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitNotExpression([NotNull] SimpleParser.NotExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by the <c>multiplicativeExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitMultiplicativeExpression([NotNull] SimpleParser.MultiplicativeExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by the <c>booleanExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBooleanExpression([NotNull] SimpleParser.BooleanExpressionContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="SimpleParser.program"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

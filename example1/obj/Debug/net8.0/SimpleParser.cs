@@ -611,13 +611,161 @@ public partial class SimpleParser : Parser {
 	}
 
 	public partial class ExpressionContext : ParserRuleContext {
+		public ExpressionContext(ParserRuleContext parent, int invokingState)
+			: base(parent, invokingState)
+		{
+		}
+		public override int RuleIndex { get { return RULE_expression; } }
+	 
+		public ExpressionContext() { }
+		public virtual void CopyFrom(ExpressionContext context) {
+			base.CopyFrom(context);
+		}
+	}
+	public partial class ComparasionExpressionContext : ExpressionContext {
+		public ExpressionContext[] expression() {
+			return GetRuleContexts<ExpressionContext>();
+		}
+		public ExpressionContext expression(int i) {
+			return GetRuleContext<ExpressionContext>(i);
+		}
+		public CompareOpContext compareOp() {
+			return GetRuleContext<CompareOpContext>(0);
+		}
+		public ComparasionExpressionContext(ExpressionContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			ISimpleListener typedListener = listener as ISimpleListener;
+			if (typedListener != null) typedListener.EnterComparasionExpression(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			ISimpleListener typedListener = listener as ISimpleListener;
+			if (typedListener != null) typedListener.ExitComparasionExpression(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			ISimpleVisitor<TResult> typedVisitor = visitor as ISimpleVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitComparasionExpression(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+	public partial class ParenthesizedExpressionContext : ExpressionContext {
+		public ExpressionContext expression() {
+			return GetRuleContext<ExpressionContext>(0);
+		}
+		public ParenthesizedExpressionContext(ExpressionContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			ISimpleListener typedListener = listener as ISimpleListener;
+			if (typedListener != null) typedListener.EnterParenthesizedExpression(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			ISimpleListener typedListener = listener as ISimpleListener;
+			if (typedListener != null) typedListener.ExitParenthesizedExpression(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			ISimpleVisitor<TResult> typedVisitor = visitor as ISimpleVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitParenthesizedExpression(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+	public partial class ConstantExpressionContext : ExpressionContext {
 		public ConstantContext constant() {
 			return GetRuleContext<ConstantContext>(0);
 		}
+		public ConstantExpressionContext(ExpressionContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			ISimpleListener typedListener = listener as ISimpleListener;
+			if (typedListener != null) typedListener.EnterConstantExpression(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			ISimpleListener typedListener = listener as ISimpleListener;
+			if (typedListener != null) typedListener.ExitConstantExpression(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			ISimpleVisitor<TResult> typedVisitor = visitor as ISimpleVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitConstantExpression(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+	public partial class AdditiveExpressionContext : ExpressionContext {
+		public ExpressionContext[] expression() {
+			return GetRuleContexts<ExpressionContext>();
+		}
+		public ExpressionContext expression(int i) {
+			return GetRuleContext<ExpressionContext>(i);
+		}
+		public AddOpContext addOp() {
+			return GetRuleContext<AddOpContext>(0);
+		}
+		public AdditiveExpressionContext(ExpressionContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			ISimpleListener typedListener = listener as ISimpleListener;
+			if (typedListener != null) typedListener.EnterAdditiveExpression(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			ISimpleListener typedListener = listener as ISimpleListener;
+			if (typedListener != null) typedListener.ExitAdditiveExpression(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			ISimpleVisitor<TResult> typedVisitor = visitor as ISimpleVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAdditiveExpression(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+	public partial class IdentifierExpressionContext : ExpressionContext {
 		public ITerminalNode IDENTIFIER() { return GetToken(SimpleParser.IDENTIFIER, 0); }
+		public IdentifierExpressionContext(ExpressionContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			ISimpleListener typedListener = listener as ISimpleListener;
+			if (typedListener != null) typedListener.EnterIdentifierExpression(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			ISimpleListener typedListener = listener as ISimpleListener;
+			if (typedListener != null) typedListener.ExitIdentifierExpression(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			ISimpleVisitor<TResult> typedVisitor = visitor as ISimpleVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitIdentifierExpression(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+	public partial class FunctionCallExpressionContext : ExpressionContext {
 		public FunctionCallContext functionCall() {
 			return GetRuleContext<FunctionCallContext>(0);
 		}
+		public FunctionCallExpressionContext(ExpressionContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			ISimpleListener typedListener = listener as ISimpleListener;
+			if (typedListener != null) typedListener.EnterFunctionCallExpression(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			ISimpleListener typedListener = listener as ISimpleListener;
+			if (typedListener != null) typedListener.ExitFunctionCallExpression(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			ISimpleVisitor<TResult> typedVisitor = visitor as ISimpleVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitFunctionCallExpression(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+	public partial class NotExpressionContext : ExpressionContext {
+		public ExpressionContext expression() {
+			return GetRuleContext<ExpressionContext>(0);
+		}
+		public NotExpressionContext(ExpressionContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			ISimpleListener typedListener = listener as ISimpleListener;
+			if (typedListener != null) typedListener.EnterNotExpression(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			ISimpleListener typedListener = listener as ISimpleListener;
+			if (typedListener != null) typedListener.ExitNotExpression(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			ISimpleVisitor<TResult> typedVisitor = visitor as ISimpleVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitNotExpression(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+	public partial class MultiplicativeExpressionContext : ExpressionContext {
 		public ExpressionContext[] expression() {
 			return GetRuleContexts<ExpressionContext>();
 		}
@@ -627,31 +775,43 @@ public partial class SimpleParser : Parser {
 		public MultOpContext multOp() {
 			return GetRuleContext<MultOpContext>(0);
 		}
-		public AddOpContext addOp() {
-			return GetRuleContext<AddOpContext>(0);
+		public MultiplicativeExpressionContext(ExpressionContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			ISimpleListener typedListener = listener as ISimpleListener;
+			if (typedListener != null) typedListener.EnterMultiplicativeExpression(this);
 		}
-		public CompareOpContext compareOp() {
-			return GetRuleContext<CompareOpContext>(0);
+		public override void ExitRule(IParseTreeListener listener) {
+			ISimpleListener typedListener = listener as ISimpleListener;
+			if (typedListener != null) typedListener.ExitMultiplicativeExpression(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			ISimpleVisitor<TResult> typedVisitor = visitor as ISimpleVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitMultiplicativeExpression(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+	public partial class BooleanExpressionContext : ExpressionContext {
+		public ExpressionContext[] expression() {
+			return GetRuleContexts<ExpressionContext>();
+		}
+		public ExpressionContext expression(int i) {
+			return GetRuleContext<ExpressionContext>(i);
 		}
 		public BoolOpContext boolOp() {
 			return GetRuleContext<BoolOpContext>(0);
 		}
-		public ExpressionContext(ParserRuleContext parent, int invokingState)
-			: base(parent, invokingState)
-		{
-		}
-		public override int RuleIndex { get { return RULE_expression; } }
+		public BooleanExpressionContext(ExpressionContext context) { CopyFrom(context); }
 		public override void EnterRule(IParseTreeListener listener) {
 			ISimpleListener typedListener = listener as ISimpleListener;
-			if (typedListener != null) typedListener.EnterExpression(this);
+			if (typedListener != null) typedListener.EnterBooleanExpression(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			ISimpleListener typedListener = listener as ISimpleListener;
-			if (typedListener != null) typedListener.ExitExpression(this);
+			if (typedListener != null) typedListener.ExitBooleanExpression(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			ISimpleVisitor<TResult> typedVisitor = visitor as ISimpleVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitExpression(this);
+			if (typedVisitor != null) return typedVisitor.VisitBooleanExpression(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
@@ -677,24 +837,37 @@ public partial class SimpleParser : Parser {
 			switch ( Interpreter.AdaptivePredict(_input,7,_ctx) ) {
 			case 1:
 				{
+				_localctx = new ConstantExpressionContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+
 				State = 85; constant();
 				}
 				break;
 
 			case 2:
 				{
+				_localctx = new IdentifierExpressionContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				State = 86; Match(IDENTIFIER);
 				}
 				break;
 
 			case 3:
 				{
+				_localctx = new FunctionCallExpressionContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				State = 87; functionCall();
 				}
 				break;
 
 			case 4:
 				{
+				_localctx = new ParenthesizedExpressionContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				State = 88; Match(T__4);
 				State = 89; expression(0);
 				State = 90; Match(T__6);
@@ -703,6 +876,9 @@ public partial class SimpleParser : Parser {
 
 			case 5:
 				{
+				_localctx = new NotExpressionContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				State = 92; Match(T__7);
 				State = 93; expression(5);
 				}
@@ -722,7 +898,7 @@ public partial class SimpleParser : Parser {
 					switch ( Interpreter.AdaptivePredict(_input,8,_ctx) ) {
 					case 1:
 						{
-						_localctx = new ExpressionContext(_parentctx, _parentState);
+						_localctx = new MultiplicativeExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						PushNewRecursionContext(_localctx, _startState, RULE_expression);
 						State = 96;
 						if (!(Precpred(_ctx, 4))) throw new FailedPredicateException(this, "Precpred(_ctx, 4)");
@@ -733,7 +909,7 @@ public partial class SimpleParser : Parser {
 
 					case 2:
 						{
-						_localctx = new ExpressionContext(_parentctx, _parentState);
+						_localctx = new AdditiveExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						PushNewRecursionContext(_localctx, _startState, RULE_expression);
 						State = 100;
 						if (!(Precpred(_ctx, 3))) throw new FailedPredicateException(this, "Precpred(_ctx, 3)");
@@ -744,7 +920,7 @@ public partial class SimpleParser : Parser {
 
 					case 3:
 						{
-						_localctx = new ExpressionContext(_parentctx, _parentState);
+						_localctx = new ComparasionExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						PushNewRecursionContext(_localctx, _startState, RULE_expression);
 						State = 104;
 						if (!(Precpred(_ctx, 2))) throw new FailedPredicateException(this, "Precpred(_ctx, 2)");
@@ -755,7 +931,7 @@ public partial class SimpleParser : Parser {
 
 					case 4:
 						{
-						_localctx = new ExpressionContext(_parentctx, _parentState);
+						_localctx = new BooleanExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						PushNewRecursionContext(_localctx, _startState, RULE_expression);
 						State = 108;
 						if (!(Precpred(_ctx, 1))) throw new FailedPredicateException(this, "Precpred(_ctx, 1)");

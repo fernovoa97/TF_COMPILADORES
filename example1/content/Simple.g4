@@ -19,15 +19,15 @@ assigment: IDENTIFIER '=' expression;
 functionCall: IDENTIFIER '('(expression(',' expression)*)?')';
 
 expression
-    : constant
-    | IDENTIFIER
-    | functionCall
-    | '(' expression')'
-    | '!' expression
-    | expression multOp expression
-    | expression addOp expression
-    | expression compareOp expression
-    | expression boolOp expression
+    : constant                          #constantExpression
+    | IDENTIFIER                        #identifierExpression
+    | functionCall                      #functionCallExpression
+    | '(' expression')'                 #parenthesizedExpression
+    | '!' expression                    #notExpression
+    | expression multOp expression      #multiplicativeExpression
+    | expression addOp expression       #additiveExpression
+    | expression compareOp expression   #comparasionExpression
+    | expression boolOp expression      #booleanExpression
     ;
     
 multOp: '*' | '/' | '&';

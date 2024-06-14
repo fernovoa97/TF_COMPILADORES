@@ -36,6 +36,141 @@ using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 [System.CLSCompliant(false)]
 public partial class SimpleBaseListener : ISimpleListener {
 	/// <summary>
+	/// Enter a parse tree produced by the <c>comparasionExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterComparasionExpression([NotNull] SimpleParser.ComparasionExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>comparasionExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitComparasionExpression([NotNull] SimpleParser.ComparasionExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>parenthesizedExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterParenthesizedExpression([NotNull] SimpleParser.ParenthesizedExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>parenthesizedExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitParenthesizedExpression([NotNull] SimpleParser.ParenthesizedExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>constantExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterConstantExpression([NotNull] SimpleParser.ConstantExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>constantExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitConstantExpression([NotNull] SimpleParser.ConstantExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>additiveExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAdditiveExpression([NotNull] SimpleParser.AdditiveExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>additiveExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAdditiveExpression([NotNull] SimpleParser.AdditiveExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>identifierExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterIdentifierExpression([NotNull] SimpleParser.IdentifierExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>identifierExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitIdentifierExpression([NotNull] SimpleParser.IdentifierExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>functionCallExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterFunctionCallExpression([NotNull] SimpleParser.FunctionCallExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>functionCallExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitFunctionCallExpression([NotNull] SimpleParser.FunctionCallExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>notExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterNotExpression([NotNull] SimpleParser.NotExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>notExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitNotExpression([NotNull] SimpleParser.NotExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>multiplicativeExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterMultiplicativeExpression([NotNull] SimpleParser.MultiplicativeExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>multiplicativeExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitMultiplicativeExpression([NotNull] SimpleParser.MultiplicativeExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>booleanExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterBooleanExpression([NotNull] SimpleParser.BooleanExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>booleanExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitBooleanExpression([NotNull] SimpleParser.BooleanExpressionContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="SimpleParser.program"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
