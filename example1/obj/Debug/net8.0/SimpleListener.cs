@@ -149,6 +149,19 @@ public interface ISimpleListener : IParseTreeListener {
 	void ExitBooleanExpression([NotNull] SimpleParser.BooleanExpressionContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by the <c>logicalExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterLogicalExpression([NotNull] SimpleParser.LogicalExpressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>logicalExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitLogicalExpression([NotNull] SimpleParser.LogicalExpressionContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="SimpleParser.program"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -279,6 +292,17 @@ public interface ISimpleListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitCompareOp([NotNull] SimpleParser.CompareOpContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="SimpleParser.logicalOp"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterLogicalOp([NotNull] SimpleParser.LogicalOpContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="SimpleParser.logicalOp"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitLogicalOp([NotNull] SimpleParser.LogicalOpContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="SimpleParser.boolOp"/>.

@@ -24,6 +24,15 @@
       <None Update="content\test.ss">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Update="content\test1.ss">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Remove="content\casobueno.ss" />
+      <None Remove="content\casomalo.ss" />
+      <None Remove="content\casos.zip" />
+      <None Remove="content\prueba1.ss" />
+      <None Remove="content\prueba2.ss" />
+      <None Remove="content\prueba3.ss" />
     </ItemGroup>
 
 </Project>

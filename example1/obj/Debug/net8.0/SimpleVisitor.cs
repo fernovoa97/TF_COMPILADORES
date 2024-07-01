@@ -105,6 +105,14 @@ public interface ISimpleVisitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitBooleanExpression([NotNull] SimpleParser.BooleanExpressionContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by the <c>logicalExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitLogicalExpression([NotNull] SimpleParser.LogicalExpressionContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="SimpleParser.program"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -187,6 +195,13 @@ public interface ISimpleVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitCompareOp([NotNull] SimpleParser.CompareOpContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="SimpleParser.logicalOp"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitLogicalOp([NotNull] SimpleParser.LogicalOpContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="SimpleParser.boolOp"/>.

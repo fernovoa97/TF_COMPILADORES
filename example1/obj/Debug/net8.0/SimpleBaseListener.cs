@@ -171,6 +171,21 @@ public partial class SimpleBaseListener : ISimpleListener {
 	public virtual void ExitBooleanExpression([NotNull] SimpleParser.BooleanExpressionContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by the <c>logicalExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterLogicalExpression([NotNull] SimpleParser.LogicalExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>logicalExpression</c>
+	/// labeled alternative in <see cref="SimpleParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitLogicalExpression([NotNull] SimpleParser.LogicalExpressionContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="SimpleParser.program"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -325,6 +340,19 @@ public partial class SimpleBaseListener : ISimpleListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitCompareOp([NotNull] SimpleParser.CompareOpContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="SimpleParser.logicalOp"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterLogicalOp([NotNull] SimpleParser.LogicalOpContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="SimpleParser.logicalOp"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitLogicalOp([NotNull] SimpleParser.LogicalOpContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="SimpleParser.boolOp"/>.
