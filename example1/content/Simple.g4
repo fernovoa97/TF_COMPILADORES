@@ -6,13 +6,13 @@ line: statement | ifBlock | whileBlock;
 
 statement: (assigment | functionCall) ';';
 
-ifBlock: 'if' expression block ('else' elseIfBlock)?;
+ifBlock: 'Si' expression block ('SiNo' elseIfBlock)?;
 
 elseIfBlock: block | ifBlock;
 
-whileBlock: WHILE expression block ('else' elseIfBlock)?;
+whileBlock: WHILE expression block ('SiNo' elseIfBlock)?;
 
-WHILE: 'while' | 'until';
+WHILE: 'Mientras' | 'Hasta';
 
 assigment: IDENTIFIER '=' expression;
 
@@ -29,23 +29,25 @@ expression
     | expression compareOp expression   # comparasionExpression
     | expression boolOp expression      # booleanExpression
     | expression logicalOp expression   # logicalExpression
+    
     ;
 
-multOp: '*' | '/' | '&';
+
+multOp: '*' | '/' | '&' | 'mod%' |;
 addOp: '+' | '-';
 compareOp: '==' | '!=' | '>' | '<' | '>=' | '<=';
 logicalOp: '&&' | '||' | '!';
 boolOp: BOOL_OPERATOR;
 
-BOOL_OPERATOR: 'and' | 'or' | 'xor';
+BOOL_OPERATOR: 'Y' | 'O' | 'NoO';
 
 constant: INTEGER | FLOAT | STRING | BOOL | NULL;
 
 INTEGER: [0-9]+;
 FLOAT: [0-9]+ '.' [0-9]+;
 STRING: ('"' (~["\\] | '\\' .)* '"') | ('\'' (~['\\] | '\\' .)* '\'');
-BOOL: 'true' | 'false';
-NULL: 'null';
+BOOL: 'Verdadero' | 'Falso';
+NULL: 'Nullo';
 
 block: '{' line* '}';
 

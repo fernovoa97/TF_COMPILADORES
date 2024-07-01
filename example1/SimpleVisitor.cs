@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using example1.content;
 
 namespace example1;
@@ -11,7 +12,7 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
 
     public SimpleVisitor()
     {
-        Variables["write"] = new Func<object?[], object?>(Write);
+        Variables["muestra"] = new Func<object?[], object?>(Write);
         Variables["Write"] = new Func<object?[], object?>(Write);
     }
 
@@ -38,10 +39,10 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
         var args = context.expression().Select(Visit).ToArray();
 
         if (!Variables.ContainsKey(name))
-            throw new Exception($"Function {name} is not defined");
+            throw new Exception($"Funcion {name} no esta definida");
 
         if (Variables[name] is not Func<object?[], object?> func)
-            throw new Exception($"Function {name} is not a function");
+            throw new Exception($"Funcion {name} no esta definida");
 
         return func(args);
     }
@@ -58,7 +59,7 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
     {
         var varName = context.IDENTIFIER().GetText();
         if (!Variables.ContainsKey(varName))
-            throw new Exception($"Variable {varName} is not defined");
+            throw new Exception($"Variable {varName} no esta definida");
         return Variables[varName];
     }
 
@@ -102,7 +103,7 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
             return lFloat + rInt;
         if (left is string || right is string)
             return $"{left}{right}";
-        throw new Exception($"Cannot add values of types {left?.GetType()} and {right?.GetType()}.");
+        throw new Exception($"No se puede sumar valores del tipo {left?.GetType()} y {right?.GetType()}.");
     }
 
     private object? Subtract(object? left, object? right)
@@ -115,7 +116,7 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
             return lInt - rFloat;
         if (left is float lFloat && right is int rInt)
             return lFloat - rInt;
-        throw new Exception($"Cannot subtract values of types {left?.GetType()} and {right?.GetType()}.");
+        throw new Exception($"No se puede restar valores del tipo {left?.GetType()} y {right?.GetType()}.");
     }
 
     public override object? VisitMultiplicativeExpression(SimpleParser.MultiplicativeExpressionContext context)
@@ -128,6 +129,7 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
             "*" => Multiply(left, right),
             "/" => Divide(left, right),
             "&" => And(left, right),
+            "mod%" => Mod(left, right),
             _ => throw new NotImplementedException()
         };
     }
@@ -142,7 +144,7 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
             return lInt * rFloat;
         if (left is float lFloat && right is int rInt)
             return lFloat * rInt;
-        throw new Exception($"Cannot multiply values of types {left?.GetType()} and {right?.GetType()}.");
+        throw new Exception($"No se puede multiplicar los valores del tipo {left?.GetType()} y {right?.GetType()}.");
     }
 
     private object? Divide(object? left, object? right)
@@ -155,28 +157,41 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
             return lInt / rFloat;
         if (left is float lFloat && right is int rInt)
             return lFloat / rInt;
-        throw new Exception($"Cannot divide values of types {left?.GetType()} and {right?.GetType()}.");
+        throw new Exception($"No se puede dividir los valores del tipo {left?.GetType()} y {right?.GetType()}.");
     }
 
     private bool And(object? left, object? right)
     {
         if (left is bool lb && right is bool rb)
             return lb && rb;
-        throw new Exception($"Cannot perform AND on values of types {left?.GetType()} and {right?.GetType()}.");
+        throw new Exception($"No se pudo realizar Y en los valores del tipo {left?.GetType()} y {right?.GetType()}.");
+    }
+    
+    private object? Mod(object? left, object? right)
+    {
+        if (left is int l && right is int r)
+            return l % r;
+        if (left is float lf && right is float rf)
+            return lf % rf;
+        if (left is int lInt && right is float rFloat)
+            return lInt % rFloat;
+        if (left is float lFloat && right is int rInt)
+            return lFloat % rInt;
+        throw new Exception($"No se pudo calcular el modulo de los valores del tipo {left?.GetType()} y {right?.GetType()}.");
     }
 
     private bool Or(object? left, object? right)
     {
         if (left is bool lb && right is bool rb)
             return lb || rb;
-        throw new Exception($"Cannot perform OR on values of types {left?.GetType()} and {right?.GetType()}.");
+        throw new Exception($"CNo se pudo hacer un O en los valores del tipo {left?.GetType()} y {right?.GetType()}.");
     }
 
     private bool Xor(object? left, object? right)
     {
         if (left is bool lb && right is bool rb)
             return lb ^ rb;
-        throw new Exception($"Cannot perform XOR on values of types {left?.GetType()} and {right?.GetType()}.");
+        throw new Exception($"No se pudo hacer un NoO en los valores del tipo {left?.GetType()} y {right?.GetType()}.");
     }
 
     public override object? VisitLogicalExpression(SimpleParser.LogicalExpressionContext context)
@@ -197,7 +212,7 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
     {
         if (value is bool b)
             return !b;
-        throw new Exception($"Cannot perform NOT on value of type {value?.GetType()}.");
+        throw new Exception($"No se pudo hacer un no en {value?.GetType()}.");
     }
 
     public override object? VisitComparasionExpression(SimpleParser.ComparasionExpressionContext context)
@@ -283,7 +298,7 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
             return lb == rb;
         if (left is string ls && right is string rs)
             return ls == rs;
-        throw new Exception($"Cannot compare values of types {left?.GetType()} and {right?.GetType()}");
+        throw new Exception($"No se puede comparar valores del tipo {left?.GetType()} y {right?.GetType()}");
     }
 
     private bool NotEqual(object? left, object? right)
@@ -296,7 +311,7 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
         var condition = Visit(context.expression());
         if (IsTrue(condition))
         {
-            return Visit(context.block(0));
+            return Visit(context.block());
         }
         else if (context.elseIfBlock() != null)
         {
@@ -307,7 +322,7 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
 
     public override object? VisitWhileBlock(SimpleParser.WhileBlockContext context)
     {
-        Func<object?, bool> condition = context.WHILE().GetText() == "while"
+        Func<object?, bool> condition = context.WHILE().GetText() == "Mientras"
             ? IsTrue
             : IsFalse;
         while (condition(Visit(context.expression())))
@@ -328,7 +343,7 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
             return b;
         }
 
-        throw new Exception("value is not a boolean");
+        throw new Exception("El valor no es verdadero o falso");
     }
 
     private bool IsFalse(object? value) => !IsTrue(value);
