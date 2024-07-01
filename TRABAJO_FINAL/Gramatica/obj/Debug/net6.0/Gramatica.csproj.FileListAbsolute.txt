@@ -1,0 +1,17 @@
+C:\Users\Melanie\Desktop\TRABAJO_FINAL\Gramatica\obj\Debug\net6.0\Gramatica.csproj.AssemblyReference.cache
+C:\Users\Melanie\Desktop\TRABAJO_FINAL\Gramatica\obj\Debug\net6.0\Gramatica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Melanie\Desktop\TRABAJO_FINAL\Gramatica\obj\Debug\net6.0\Gramatica.AssemblyInfoInputs.cache
+C:\Users\Melanie\Desktop\TRABAJO_FINAL\Gramatica\obj\Debug\net6.0\Gramatica.AssemblyInfo.cs
+C:\Users\Melanie\Desktop\TRABAJO_FINAL\Gramatica\obj\Debug\net6.0\Gramatica.csproj.CoreCompileInputs.cache
+C:\Users\Melanie\Desktop\TRABAJO_FINAL\Gramatica\bin\Debug\net6.0\Gramatica.exe
+C:\Users\Melanie\Desktop\TRABAJO_FINAL\Gramatica\bin\Debug\net6.0\Gramatica.deps.json
+C:\Users\Melanie\Desktop\TRABAJO_FINAL\Gramatica\bin\Debug\net6.0\Gramatica.runtimeconfig.json
+C:\Users\Melanie\Desktop\TRABAJO_FINAL\Gramatica\bin\Debug\net6.0\Gramatica.dll
+C:\Users\Melanie\Desktop\TRABAJO_FINAL\Gramatica\bin\Debug\net6.0\Gramatica.pdb
+C:\Users\Melanie\Desktop\TRABAJO_FINAL\Gramatica\bin\Debug\net6.0\Antlr4.Runtime.Standard.dll
+C:\Users\Melanie\Desktop\TRABAJO_FINAL\Gramatica\obj\Debug\net6.0\Gramatica.csproj.CopyComplete
+C:\Users\Melanie\Desktop\TRABAJO_FINAL\Gramatica\obj\Debug\net6.0\Gramatica.dll
+C:\Users\Melanie\Desktop\TRABAJO_FINAL\Gramatica\obj\Debug\net6.0\refint\Gramatica.dll
+C:\Users\Melanie\Desktop\TRABAJO_FINAL\Gramatica\obj\Debug\net6.0\Gramatica.pdb
+C:\Users\Melanie\Desktop\TRABAJO_FINAL\Gramatica\obj\Debug\net6.0\Gramatica.genruntimeconfig.cache
+C:\Users\Melanie\Desktop\TRABAJO_FINAL\Gramatica\obj\Debug\net6.0\ref\Gramatica.dll

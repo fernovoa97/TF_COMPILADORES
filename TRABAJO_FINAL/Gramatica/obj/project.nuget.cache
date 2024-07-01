@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "JLrjMIg4lgaoRQW+LNE5RzHJMJdyZoAGhYxkYbhrwH68E+w8jr1MFHMtZi0iXFxdqvA+P2xlUhZsXDS5do56Dg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Melanie\\Desktop\\TRABAJO_FINAL\\Gramatica\\Gramatica.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Melanie\\.nuget\\packages\\antlr4.runtime.standard\\4.13.1\\antlr4.runtime.standard.4.13.1.nupkg.sha512"
+  ],
+  "logs": []
+}

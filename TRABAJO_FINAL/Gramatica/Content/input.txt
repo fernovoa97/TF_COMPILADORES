@@ -1,0 +1,7 @@
+Inicio:
+entero x = 10;
+mostrar(x);
+fin .
+
+    
+
