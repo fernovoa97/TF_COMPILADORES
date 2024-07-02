@@ -1,4 +1,4 @@
-// Generated from c:/Users/Melanie/Desktop/TRABAJO_COMP/TF_COMPILADORES/example1/content/Simple.g4 by ANTLR 4.13.1
+// Generated from c:/Users/Melanie/Desktop/TRABAJO_COMP2/TF_COMPILADORES/example1/content/Simple.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -67,15 +67,15 @@ public interface SimpleListener extends ParseTreeListener {
 	 */
 	void exitWhileBlock(SimpleParser.WhileBlockContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link SimpleParser#assigment}.
+	 * Enter a parse tree produced by {@link SimpleParser#assignment}.
 	 * @param ctx the parse tree
 	 */
-	void enterAssigment(SimpleParser.AssigmentContext ctx);
+	void enterAssignment(SimpleParser.AssignmentContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link SimpleParser#assigment}.
+	 * Exit a parse tree produced by {@link SimpleParser#assignment}.
 	 * @param ctx the parse tree
 	 */
-	void exitAssigment(SimpleParser.AssigmentContext ctx);
+	void exitAssignment(SimpleParser.AssignmentContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link SimpleParser#functionCall}.
 	 * @param ctx the parse tree

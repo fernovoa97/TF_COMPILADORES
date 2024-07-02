@@ -1,6 +1,7 @@
 Inicio:
-a=18;
-b=3;
-IMPRIME(a rsd% b);
-#esaskalskalskk
+    a = "Hola";
+    b = 10;
+    Si (a < b) {
+        muestra("Esta condición no debería cumplirse");
+    }
 fin.

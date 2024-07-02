@@ -1,4 +1,4 @@
-// Generated from c:/Users/Melanie/Desktop/TRABAJO_COMP/TF_COMPILADORES/example1/content/Simple.g4 by ANTLR 4.13.1
+// Generated from c:/Users/Melanie/Desktop/TRABAJO_COMP2/TF_COMPILADORES/example1/content/Simple.g4 by ANTLR 4.13.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -88,13 +88,13 @@ public class SimpleBaseListener implements SimpleListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssigment(SimpleParser.AssigmentContext ctx) { }
+	@Override public void enterAssignment(SimpleParser.AssignmentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAssigment(SimpleParser.AssigmentContext ctx) { }
+	@Override public void exitAssignment(SimpleParser.AssignmentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

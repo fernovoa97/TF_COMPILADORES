@@ -135,6 +135,7 @@ private object? Add(object? left, object? right)
             "/" => Divide(left, right),
             "&" => And(left, right),
             "rsd%" => Mod(left, right),
+            "Math.Pow"=>Pot(left, right),
             _ => throw new NotImplementedException()
         };
     }
@@ -171,7 +172,19 @@ private object? Add(object? left, object? right)
             return lb && rb;
         throw new Exception($"No se pudo realizar Y en los valores del tipo {left?.GetType()} y {right?.GetType()}.");
     }
+    private object? Pot(object? left, object? right)
+    {
+    if (left is int l && right is int r)
+        return (int)Math.Pow(l, r);  // Potencia de un entero elevado a otro entero
+    if (left is float lf && right is float rf)
+        return (float)Math.Pow(lf, rf);  // Potencia de un flotante elevado a otro flotante
+    if (left is int lInt && right is float rFloat)
+        return (float)Math.Pow(lInt, rFloat);  // Potencia de un entero elevado a un flotante
+    if (left is float lFloat && right is int rInt)
+        return (float)Math.Pow(lFloat, rInt);  // Potencia de un flotante elevado a un entero
     
+    throw new Exception($"No se pudo calcular la potencia de los valores del tipo {left?.GetType()} y {right?.GetType()}.");
+    }
     private object? Mod(object? left, object? right)
     {
         if (left is int l && right is int r)
@@ -192,12 +205,7 @@ private object? Add(object? left, object? right)
         throw new Exception($"No se pudo hacer un O en los valores del tipo {left?.GetType()} y {right?.GetType()}.");
     }
 
-    private bool Xor(object? left, object? right)
-    {
-        if (left is bool lb && right is bool rb)
-            return lb ^ rb;
-        throw new Exception($"No se pudo hacer un NoO en los valores del tipo {left?.GetType()} y {right?.GetType()}.");
-    }
+
 
     public override object? VisitLogicalExpression(SimpleParser.LogicalExpressionContext context)
     {
