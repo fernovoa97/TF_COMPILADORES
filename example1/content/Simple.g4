@@ -1,10 +1,10 @@
 grammar Simple;
 
-program: line* EOF;
+program: 'Inicio' ':' line* 'fin' '.';
 
 line: statement | ifBlock | whileBlock;
 
-statement: (assigment | functionCall) ';';
+statement: (assignment | functionCall) ';';
 
 ifBlock: 'Si' expression block ('SiNo' elseIfBlock)?;
 
@@ -14,7 +14,7 @@ whileBlock: WHILE expression block ('SiNo' elseIfBlock)?;
 
 WHILE: 'Mientras' | 'Hasta';
 
-assigment: IDENTIFIER '=' expression;
+assignment: IDENTIFIER '=' expression;
 
 functionCall: IDENTIFIER '(' (expression (',' expression)*)? ')';
 
@@ -29,11 +29,9 @@ expression
     | expression compareOp expression   # comparasionExpression
     | expression boolOp expression      # booleanExpression
     | expression logicalOp expression   # logicalExpression
-    
     ;
 
-
-multOp: '*' | '/' | '&' | 'mod%' |;
+multOp: '*' | '/' | '&' | 'rsd%' |;
 addOp: '+' | '-';
 compareOp: '==' | '!=' | '>' | '<' | '>=' | '<=';
 logicalOp: '&&' | '||' | '!';
@@ -48,6 +46,8 @@ FLOAT: [0-9]+ '.' [0-9]+;
 STRING: ('"' (~["\\] | '\\' .)* '"') | ('\'' (~['\\] | '\\' .)* '\'');
 BOOL: 'Verdadero' | 'Falso';
 NULL: 'Nullo';
+
+COMMENT: '#' ~[\r\n]* -> skip;
 
 block: '{' line* '}';
 

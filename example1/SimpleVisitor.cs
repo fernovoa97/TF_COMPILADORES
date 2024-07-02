@@ -13,7 +13,7 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
     public SimpleVisitor()
     {
         Variables["muestra"] = new Func<object?[], object?>(Write);
-        Variables["Write"] = new Func<object?[], object?>(Write);
+        Variables["Muestra"] = new Func<object?[], object?>(Write);
     }
 
     private object? Write(object?[] args)
