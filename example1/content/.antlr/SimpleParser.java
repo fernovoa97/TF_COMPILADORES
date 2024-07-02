@@ -1,4 +1,4 @@
-// Generated from c:/Users/Melanie/Desktop/TRABAJO_COMP2/TF_COMPILADORES/example1/content/Simple.g4 by ANTLR 4.13.1
+// Generated from c:/Users/fer_u/OneDrive/Escritorio/ULTIMO_COMMIT/TF_COMPILADORES/example1/content/Simple.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -19,9 +19,9 @@ public class SimpleParser extends Parser {
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
 		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, T__23=24, 
-		T__24=25, T__25=26, T__26=27, T__27=28, T__28=29, WHILE=30, BOOL_OPERATOR=31, 
-		INTEGER=32, FLOAT=33, STRING=34, BOOL=35, NULL=36, COMMENT=37, WS=38, 
-		IDENTIFIER=39;
+		T__24=25, T__25=26, T__26=27, T__27=28, T__28=29, T__29=30, WHILE=31, 
+		BOOL_OPERATOR=32, INTEGER=33, FLOAT=34, STRING=35, BOOL=36, NULL=37, COMMENT=38, 
+		WS=39, IDENTIFIER=40;
 	public static final int
 		RULE_program = 0, RULE_line = 1, RULE_statement = 2, RULE_ifBlock = 3, 
 		RULE_elseIfBlock = 4, RULE_whileBlock = 5, RULE_assignment = 6, RULE_functionCall = 7, 
@@ -39,7 +39,7 @@ public class SimpleParser extends Parser {
 	private static String[] makeLiteralNames() {
 		return new String[] {
 			null, "'Inicio'", "':'", "'fin'", "'.'", "';'", "'Si'", "'SiNo'", "'='", 
-			"'('", "','", "')'", "'!'", "'*'", "'/'", "'&'", "'rsd%'", "'Math.Pow'", 
+			"'('", "','", "')'", "'!'", "'*'", "'/'", "'&'", "'rsd%'", "'^^'", "'^/'", 
 			"'+'", "'-'", "'=='", "'!='", "'>'", "'<'", "'>='", "'<='", "'&&'", "'||'", 
 			"'{'", "'}'", null, null, null, null, null, null, "'Nullo'"
 		};
@@ -49,7 +49,7 @@ public class SimpleParser extends Parser {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
 			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, "WHILE", "BOOL_OPERATOR", "INTEGER", 
+			null, null, null, null, null, null, null, "WHILE", "BOOL_OPERATOR", "INTEGER", 
 			"FLOAT", "STRING", "BOOL", "NULL", "COMMENT", "WS", "IDENTIFIER"
 		};
 	}
@@ -132,7 +132,7 @@ public class SimpleParser extends Parser {
 			setState(37);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 550829555776L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 1101659111488L) != 0)) {
 				{
 				{
 				setState(34);
@@ -347,7 +347,7 @@ public class SimpleParser extends Parser {
 			setState(63);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__27:
+			case T__28:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(61);
@@ -498,7 +498,7 @@ public class SimpleParser extends Parser {
 			setState(86);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & 682899804672L) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & 1365799604736L) != 0)) {
 				{
 				setState(78);
 				expression(0);
@@ -827,7 +827,7 @@ public class SimpleParser extends Parser {
 			{
 			setState(127);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 253952L) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 516096L) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -865,7 +865,7 @@ public class SimpleParser extends Parser {
 			{
 			setState(129);
 			_la = _input.LA(1);
-			if ( !(_la==T__17 || _la==T__18) ) {
+			if ( !(_la==T__18 || _la==T__19) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -903,7 +903,7 @@ public class SimpleParser extends Parser {
 			{
 			setState(131);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 66060288L) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 132120576L) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -941,7 +941,7 @@ public class SimpleParser extends Parser {
 			{
 			setState(133);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 201330688L) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 402657280L) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -1014,7 +1014,7 @@ public class SimpleParser extends Parser {
 			{
 			setState(137);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 133143986176L) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 266287972352L) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -1057,11 +1057,11 @@ public class SimpleParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(139);
-			match(T__27);
+			match(T__28);
 			setState(143);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 550829555776L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 1101659111488L) != 0)) {
 				{
 				{
 				setState(140);
@@ -1073,7 +1073,7 @@ public class SimpleParser extends Parser {
 				_la = _input.LA(1);
 			}
 			setState(146);
-			match(T__28);
+			match(T__29);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1111,7 +1111,7 @@ public class SimpleParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\'\u0095\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0004\u0001(\u0095\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
 		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004\u0002"+
 		"\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0002\u0007\u0007\u0007\u0002"+
 		"\b\u0007\b\u0002\t\u0007\t\u0002\n\u0007\n\u0002\u000b\u0007\u000b\u0002"+
@@ -1134,8 +1134,8 @@ public class SimpleParser extends Parser {
 		"\u000f\u0005\u000f\u008e\b\u000f\n\u000f\f\u000f\u0091\t\u000f\u0001\u000f"+
 		"\u0001\u000f\u0001\u000f\u0000\u0001\u0010\u0010\u0000\u0002\u0004\u0006"+
 		"\b\n\f\u000e\u0010\u0012\u0014\u0016\u0018\u001a\u001c\u001e\u0000\u0005"+
-		"\u0001\u0000\r\u0011\u0001\u0000\u0012\u0013\u0001\u0000\u0014\u0019\u0002"+
-		"\u0000\f\f\u001a\u001b\u0001\u0000 $\u0097\u0000 \u0001\u0000\u0000\u0000"+
+		"\u0001\u0000\r\u0012\u0001\u0000\u0013\u0014\u0001\u0000\u0015\u001a\u0002"+
+		"\u0000\f\f\u001b\u001c\u0001\u0000!%\u0097\u0000 \u0001\u0000\u0000\u0000"+
 		"\u0002.\u0001\u0000\u0000\u0000\u00042\u0001\u0000\u0000\u0000\u00066"+
 		"\u0001\u0000\u0000\u0000\b?\u0001\u0000\u0000\u0000\nA\u0001\u0000\u0000"+
 		"\u0000\fH\u0001\u0000\u0000\u0000\u000eL\u0001\u0000\u0000\u0000\u0010"+
@@ -1157,43 +1157,43 @@ public class SimpleParser extends Parser {
 		";9\u0001\u0000\u0000\u0000;<\u0001\u0000\u0000\u0000<\u0007\u0001\u0000"+
 		"\u0000\u0000=@\u0003\u001e\u000f\u0000>@\u0003\u0006\u0003\u0000?=\u0001"+
 		"\u0000\u0000\u0000?>\u0001\u0000\u0000\u0000@\t\u0001\u0000\u0000\u0000"+
-		"AB\u0005\u001e\u0000\u0000BC\u0003\u0010\b\u0000CF\u0003\u001e\u000f\u0000"+
+		"AB\u0005\u001f\u0000\u0000BC\u0003\u0010\b\u0000CF\u0003\u001e\u000f\u0000"+
 		"DE\u0005\u0007\u0000\u0000EG\u0003\b\u0004\u0000FD\u0001\u0000\u0000\u0000"+
-		"FG\u0001\u0000\u0000\u0000G\u000b\u0001\u0000\u0000\u0000HI\u0005\'\u0000"+
+		"FG\u0001\u0000\u0000\u0000G\u000b\u0001\u0000\u0000\u0000HI\u0005(\u0000"+
 		"\u0000IJ\u0005\b\u0000\u0000JK\u0003\u0010\b\u0000K\r\u0001\u0000\u0000"+
-		"\u0000LM\u0005\'\u0000\u0000MV\u0005\t\u0000\u0000NS\u0003\u0010\b\u0000"+
+		"\u0000LM\u0005(\u0000\u0000MV\u0005\t\u0000\u0000NS\u0003\u0010\b\u0000"+
 		"OP\u0005\n\u0000\u0000PR\u0003\u0010\b\u0000QO\u0001\u0000\u0000\u0000"+
 		"RU\u0001\u0000\u0000\u0000SQ\u0001\u0000\u0000\u0000ST\u0001\u0000\u0000"+
 		"\u0000TW\u0001\u0000\u0000\u0000US\u0001\u0000\u0000\u0000VN\u0001\u0000"+
 		"\u0000\u0000VW\u0001\u0000\u0000\u0000WX\u0001\u0000\u0000\u0000XY\u0005"+
 		"\u000b\u0000\u0000Y\u000f\u0001\u0000\u0000\u0000Z[\u0006\b\uffff\uffff"+
-		"\u0000[e\u0003\u001c\u000e\u0000\\e\u0005\'\u0000\u0000]e\u0003\u000e"+
-		"\u0007\u0000^_\u0005\t\u0000\u0000_`\u0003\u0010\b\u0000`a\u0005\u000b"+
-		"\u0000\u0000ae\u0001\u0000\u0000\u0000bc\u0005\f\u0000\u0000ce\u0003\u0010"+
-		"\b\u0006dZ\u0001\u0000\u0000\u0000d\\\u0001\u0000\u0000\u0000d]\u0001"+
-		"\u0000\u0000\u0000d^\u0001\u0000\u0000\u0000db\u0001\u0000\u0000\u0000"+
-		"e|\u0001\u0000\u0000\u0000fg\n\u0005\u0000\u0000gh\u0003\u0012\t\u0000"+
-		"hi\u0003\u0010\b\u0006i{\u0001\u0000\u0000\u0000jk\n\u0004\u0000\u0000"+
-		"kl\u0003\u0014\n\u0000lm\u0003\u0010\b\u0005m{\u0001\u0000\u0000\u0000"+
-		"no\n\u0003\u0000\u0000op\u0003\u0016\u000b\u0000pq\u0003\u0010\b\u0004"+
-		"q{\u0001\u0000\u0000\u0000rs\n\u0002\u0000\u0000st\u0003\u001a\r\u0000"+
-		"tu\u0003\u0010\b\u0003u{\u0001\u0000\u0000\u0000vw\n\u0001\u0000\u0000"+
-		"wx\u0003\u0018\f\u0000xy\u0003\u0010\b\u0002y{\u0001\u0000\u0000\u0000"+
-		"zf\u0001\u0000\u0000\u0000zj\u0001\u0000\u0000\u0000zn\u0001\u0000\u0000"+
-		"\u0000zr\u0001\u0000\u0000\u0000zv\u0001\u0000\u0000\u0000{~\u0001\u0000"+
-		"\u0000\u0000|z\u0001\u0000\u0000\u0000|}\u0001\u0000\u0000\u0000}\u0011"+
-		"\u0001\u0000\u0000\u0000~|\u0001\u0000\u0000\u0000\u007f\u0080\u0007\u0000"+
-		"\u0000\u0000\u0080\u0013\u0001\u0000\u0000\u0000\u0081\u0082\u0007\u0001"+
-		"\u0000\u0000\u0082\u0015\u0001\u0000\u0000\u0000\u0083\u0084\u0007\u0002"+
-		"\u0000\u0000\u0084\u0017\u0001\u0000\u0000\u0000\u0085\u0086\u0007\u0003"+
-		"\u0000\u0000\u0086\u0019\u0001\u0000\u0000\u0000\u0087\u0088\u0005\u001f"+
-		"\u0000\u0000\u0088\u001b\u0001\u0000\u0000\u0000\u0089\u008a\u0007\u0004"+
-		"\u0000\u0000\u008a\u001d\u0001\u0000\u0000\u0000\u008b\u008f\u0005\u001c"+
-		"\u0000\u0000\u008c\u008e\u0003\u0002\u0001\u0000\u008d\u008c\u0001\u0000"+
-		"\u0000\u0000\u008e\u0091\u0001\u0000\u0000\u0000\u008f\u008d\u0001\u0000"+
-		"\u0000\u0000\u008f\u0090\u0001\u0000\u0000\u0000\u0090\u0092\u0001\u0000"+
-		"\u0000\u0000\u0091\u008f\u0001\u0000\u0000\u0000\u0092\u0093\u0005\u001d"+
-		"\u0000\u0000\u0093\u001f\u0001\u0000\u0000\u0000\f%.2;?FSVdz|\u008f";
+		"\u0000[e\u0003\u001c\u000e\u0000\\e\u0005(\u0000\u0000]e\u0003\u000e\u0007"+
+		"\u0000^_\u0005\t\u0000\u0000_`\u0003\u0010\b\u0000`a\u0005\u000b\u0000"+
+		"\u0000ae\u0001\u0000\u0000\u0000bc\u0005\f\u0000\u0000ce\u0003\u0010\b"+
+		"\u0006dZ\u0001\u0000\u0000\u0000d\\\u0001\u0000\u0000\u0000d]\u0001\u0000"+
+		"\u0000\u0000d^\u0001\u0000\u0000\u0000db\u0001\u0000\u0000\u0000e|\u0001"+
+		"\u0000\u0000\u0000fg\n\u0005\u0000\u0000gh\u0003\u0012\t\u0000hi\u0003"+
+		"\u0010\b\u0006i{\u0001\u0000\u0000\u0000jk\n\u0004\u0000\u0000kl\u0003"+
+		"\u0014\n\u0000lm\u0003\u0010\b\u0005m{\u0001\u0000\u0000\u0000no\n\u0003"+
+		"\u0000\u0000op\u0003\u0016\u000b\u0000pq\u0003\u0010\b\u0004q{\u0001\u0000"+
+		"\u0000\u0000rs\n\u0002\u0000\u0000st\u0003\u001a\r\u0000tu\u0003\u0010"+
+		"\b\u0003u{\u0001\u0000\u0000\u0000vw\n\u0001\u0000\u0000wx\u0003\u0018"+
+		"\f\u0000xy\u0003\u0010\b\u0002y{\u0001\u0000\u0000\u0000zf\u0001\u0000"+
+		"\u0000\u0000zj\u0001\u0000\u0000\u0000zn\u0001\u0000\u0000\u0000zr\u0001"+
+		"\u0000\u0000\u0000zv\u0001\u0000\u0000\u0000{~\u0001\u0000\u0000\u0000"+
+		"|z\u0001\u0000\u0000\u0000|}\u0001\u0000\u0000\u0000}\u0011\u0001\u0000"+
+		"\u0000\u0000~|\u0001\u0000\u0000\u0000\u007f\u0080\u0007\u0000\u0000\u0000"+
+		"\u0080\u0013\u0001\u0000\u0000\u0000\u0081\u0082\u0007\u0001\u0000\u0000"+
+		"\u0082\u0015\u0001\u0000\u0000\u0000\u0083\u0084\u0007\u0002\u0000\u0000"+
+		"\u0084\u0017\u0001\u0000\u0000\u0000\u0085\u0086\u0007\u0003\u0000\u0000"+
+		"\u0086\u0019\u0001\u0000\u0000\u0000\u0087\u0088\u0005 \u0000\u0000\u0088"+
+		"\u001b\u0001\u0000\u0000\u0000\u0089\u008a\u0007\u0004\u0000\u0000\u008a"+
+		"\u001d\u0001\u0000\u0000\u0000\u008b\u008f\u0005\u001d\u0000\u0000\u008c"+
+		"\u008e\u0003\u0002\u0001\u0000\u008d\u008c\u0001\u0000\u0000\u0000\u008e"+
+		"\u0091\u0001\u0000\u0000\u0000\u008f\u008d\u0001\u0000\u0000\u0000\u008f"+
+		"\u0090\u0001\u0000\u0000\u0000\u0090\u0092\u0001\u0000\u0000\u0000\u0091"+
+		"\u008f\u0001\u0000\u0000\u0000\u0092\u0093\u0005\u001e\u0000\u0000\u0093"+
+		"\u001f\u0001\u0000\u0000\u0000\f%.2;?FSVdz|\u008f";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

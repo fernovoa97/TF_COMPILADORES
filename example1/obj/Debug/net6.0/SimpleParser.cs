@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:\Users\Melanie\Desktop\TRABAJO_COMP2\TF_COMPILADORES\example1\content\Simple.g4 by ANTLR 4.6.6
+// Generated from C:\Users\fer_u\OneDrive\Escritorio\ULTIMO_COMMIT\TF_COMPILADORES\example1\content\Simple.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -34,9 +34,9 @@ public partial class SimpleParser : Parser {
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
 		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, T__23=24, 
-		T__24=25, T__25=26, T__26=27, T__27=28, T__28=29, WHILE=30, BOOL_OPERATOR=31, 
-		INTEGER=32, FLOAT=33, STRING=34, BOOL=35, NULL=36, COMMENT=37, WS=38, 
-		IDENTIFIER=39;
+		T__24=25, T__25=26, T__26=27, T__27=28, T__28=29, T__29=30, WHILE=31, 
+		BOOL_OPERATOR=32, INTEGER=33, FLOAT=34, STRING=35, BOOL=36, NULL=37, COMMENT=38, 
+		WS=39, IDENTIFIER=40;
 	public const int
 		RULE_program = 0, RULE_line = 1, RULE_statement = 2, RULE_ifBlock = 3, 
 		RULE_elseIfBlock = 4, RULE_whileBlock = 5, RULE_assignment = 6, RULE_functionCall = 7, 
@@ -50,14 +50,14 @@ public partial class SimpleParser : Parser {
 
 	private static readonly string[] _LiteralNames = {
 		null, "'Inicio'", "':'", "'fin'", "'.'", "';'", "'Si'", "'SiNo'", "'='", 
-		"'('", "','", "')'", "'!'", "'*'", "'/'", "'&'", "'rsd%'", "'Math.Pow'", 
+		"'('", "','", "')'", "'!'", "'*'", "'/'", "'&'", "'rsd%'", "'^^'", "'^/'", 
 		"'+'", "'-'", "'=='", "'!='", "'>'", "'<'", "'>='", "'<='", "'&&'", "'||'", 
 		"'{'", "'}'", null, null, null, null, null, null, "'Nullo'"
 	};
 	private static readonly string[] _SymbolicNames = {
 		null, null, null, null, null, null, null, null, null, null, null, null, 
 		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, "WHILE", "BOOL_OPERATOR", "INTEGER", 
+		null, null, null, null, null, null, null, "WHILE", "BOOL_OPERATOR", "INTEGER", 
 		"FLOAT", "STRING", "BOOL", "NULL", "COMMENT", "WS", "IDENTIFIER"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
@@ -408,7 +408,7 @@ public partial class SimpleParser : Parser {
 			State = 63;
 			_errHandler.Sync(this);
 			switch (_input.La(1)) {
-			case T__27:
+			case T__28:
 				EnterOuterAlt(_localctx, 1);
 				{
 				State = 61; block();
@@ -1039,7 +1039,7 @@ public partial class SimpleParser : Parser {
 			{
 			State = 127;
 			_la = _input.La(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__16))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__16) | (1L << T__17))) != 0)) ) {
 			_errHandler.RecoverInline(this);
 			} else {
 				if (_input.La(1) == TokenConstants.Eof) {
@@ -1093,7 +1093,7 @@ public partial class SimpleParser : Parser {
 			{
 			State = 129;
 			_la = _input.La(1);
-			if ( !(_la==T__17 || _la==T__18) ) {
+			if ( !(_la==T__18 || _la==T__19) ) {
 			_errHandler.RecoverInline(this);
 			} else {
 				if (_input.La(1) == TokenConstants.Eof) {
@@ -1147,7 +1147,7 @@ public partial class SimpleParser : Parser {
 			{
 			State = 131;
 			_la = _input.La(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25))) != 0)) ) {
 			_errHandler.RecoverInline(this);
 			} else {
 				if (_input.La(1) == TokenConstants.Eof) {
@@ -1201,7 +1201,7 @@ public partial class SimpleParser : Parser {
 			{
 			State = 133;
 			_la = _input.La(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__11) | (1L << T__25) | (1L << T__26))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__11) | (1L << T__26) | (1L << T__27))) != 0)) ) {
 			_errHandler.RecoverInline(this);
 			} else {
 				if (_input.La(1) == TokenConstants.Eof) {
@@ -1361,7 +1361,7 @@ public partial class SimpleParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 139; Match(T__27);
+			State = 139; Match(T__28);
 			State = 143;
 			_errHandler.Sync(this);
 			_la = _input.La(1);
@@ -1375,7 +1375,7 @@ public partial class SimpleParser : Parser {
 				_errHandler.Sync(this);
 				_la = _input.La(1);
 			}
-			State = 146; Match(T__28);
+			State = 146; Match(T__29);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1411,7 +1411,7 @@ public partial class SimpleParser : Parser {
 	}
 
 	public static readonly string _serializedATN =
-		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3)\x97\x4\x2\t\x2"+
+		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3*\x97\x4\x2\t\x2"+
 		"\x4\x3\t\x3\x4\x4\t\x4\x4\x5\t\x5\x4\x6\t\x6\x4\a\t\a\x4\b\t\b\x4\t\t"+
 		"\t\x4\n\t\n\x4\v\t\v\x4\f\t\f\x4\r\t\r\x4\xE\t\xE\x4\xF\t\xF\x4\x10\t"+
 		"\x10\x4\x11\t\x11\x3\x2\x3\x2\x3\x2\a\x2&\n\x2\f\x2\xE\x2)\v\x2\x3\x2"+
@@ -1425,8 +1425,8 @@ public partial class SimpleParser : Parser {
 		"\r\x3\xE\x3\xE\x3\xF\x3\xF\x3\x10\x3\x10\x3\x11\x3\x11\a\x11\x90\n\x11"+
 		"\f\x11\xE\x11\x93\v\x11\x3\x11\x3\x11\x3\x11\x2\x2\x3\x12\x12\x2\x2\x4"+
 		"\x2\x6\x2\b\x2\n\x2\f\x2\xE\x2\x10\x2\x12\x2\x14\x2\x16\x2\x18\x2\x1A"+
-		"\x2\x1C\x2\x1E\x2 \x2\x2\a\x3\x2\xF\x13\x3\x2\x14\x15\x3\x2\x16\x1B\x4"+
-		"\x2\xE\xE\x1C\x1D\x3\x2\"&\x99\x2\"\x3\x2\x2\x2\x4\x30\x3\x2\x2\x2\x6"+
+		"\x2\x1C\x2\x1E\x2 \x2\x2\a\x3\x2\xF\x14\x3\x2\x15\x16\x3\x2\x17\x1C\x4"+
+		"\x2\xE\xE\x1D\x1E\x3\x2#\'\x99\x2\"\x3\x2\x2\x2\x4\x30\x3\x2\x2\x2\x6"+
 		"\x34\x3\x2\x2\x2\b\x38\x3\x2\x2\x2\n\x41\x3\x2\x2\x2\f\x43\x3\x2\x2\x2"+
 		"\xEJ\x3\x2\x2\x2\x10N\x3\x2\x2\x2\x12\x66\x3\x2\x2\x2\x14\x81\x3\x2\x2"+
 		"\x2\x16\x83\x3\x2\x2\x2\x18\x85\x3\x2\x2\x2\x1A\x87\x3\x2\x2\x2\x1C\x89"+
@@ -1439,13 +1439,13 @@ public partial class SimpleParser : Parser {
 		"\x36\x3\x2\x2\x2\x36\x37\a\a\x2\x2\x37\a\x3\x2\x2\x2\x38\x39\a\b\x2\x2"+
 		"\x39:\x5\x12\n\x2:=\x5 \x11\x2;<\a\t\x2\x2<>\x5\n\x6\x2=;\x3\x2\x2\x2"+
 		"=>\x3\x2\x2\x2>\t\x3\x2\x2\x2?\x42\x5 \x11\x2@\x42\x5\b\x5\x2\x41?\x3"+
-		"\x2\x2\x2\x41@\x3\x2\x2\x2\x42\v\x3\x2\x2\x2\x43\x44\a \x2\x2\x44\x45"+
+		"\x2\x2\x2\x41@\x3\x2\x2\x2\x42\v\x3\x2\x2\x2\x43\x44\a!\x2\x2\x44\x45"+
 		"\x5\x12\n\x2\x45H\x5 \x11\x2\x46G\a\t\x2\x2GI\x5\n\x6\x2H\x46\x3\x2\x2"+
-		"\x2HI\x3\x2\x2\x2I\r\x3\x2\x2\x2JK\a)\x2\x2KL\a\n\x2\x2LM\x5\x12\n\x2"+
-		"M\xF\x3\x2\x2\x2NO\a)\x2\x2OX\a\v\x2\x2PU\x5\x12\n\x2QR\a\f\x2\x2RT\x5"+
+		"\x2HI\x3\x2\x2\x2I\r\x3\x2\x2\x2JK\a*\x2\x2KL\a\n\x2\x2LM\x5\x12\n\x2"+
+		"M\xF\x3\x2\x2\x2NO\a*\x2\x2OX\a\v\x2\x2PU\x5\x12\n\x2QR\a\f\x2\x2RT\x5"+
 		"\x12\n\x2SQ\x3\x2\x2\x2TW\x3\x2\x2\x2US\x3\x2\x2\x2UV\x3\x2\x2\x2VY\x3"+
 		"\x2\x2\x2WU\x3\x2\x2\x2XP\x3\x2\x2\x2XY\x3\x2\x2\x2YZ\x3\x2\x2\x2Z[\a"+
-		"\r\x2\x2[\x11\x3\x2\x2\x2\\]\b\n\x1\x2]g\x5\x1E\x10\x2^g\a)\x2\x2_g\x5"+
+		"\r\x2\x2[\x11\x3\x2\x2\x2\\]\b\n\x1\x2]g\x5\x1E\x10\x2^g\a*\x2\x2_g\x5"+
 		"\x10\t\x2`\x61\a\v\x2\x2\x61\x62\x5\x12\n\x2\x62\x63\a\r\x2\x2\x63g\x3"+
 		"\x2\x2\x2\x64\x65\a\xE\x2\x2\x65g\x5\x12\n\b\x66\\\x3\x2\x2\x2\x66^\x3"+
 		"\x2\x2\x2\x66_\x3\x2\x2\x2\x66`\x3\x2\x2\x2\x66\x64\x3\x2\x2\x2g~\x3\x2"+
@@ -1457,11 +1457,11 @@ public partial class SimpleParser : Parser {
 		"}\x80\x3\x2\x2\x2~|\x3\x2\x2\x2~\x7F\x3\x2\x2\x2\x7F\x13\x3\x2\x2\x2\x80"+
 		"~\x3\x2\x2\x2\x81\x82\t\x2\x2\x2\x82\x15\x3\x2\x2\x2\x83\x84\t\x3\x2\x2"+
 		"\x84\x17\x3\x2\x2\x2\x85\x86\t\x4\x2\x2\x86\x19\x3\x2\x2\x2\x87\x88\t"+
-		"\x5\x2\x2\x88\x1B\x3\x2\x2\x2\x89\x8A\a!\x2\x2\x8A\x1D\x3\x2\x2\x2\x8B"+
-		"\x8C\t\x6\x2\x2\x8C\x1F\x3\x2\x2\x2\x8D\x91\a\x1E\x2\x2\x8E\x90\x5\x4"+
+		"\x5\x2\x2\x88\x1B\x3\x2\x2\x2\x89\x8A\a\"\x2\x2\x8A\x1D\x3\x2\x2\x2\x8B"+
+		"\x8C\t\x6\x2\x2\x8C\x1F\x3\x2\x2\x2\x8D\x91\a\x1F\x2\x2\x8E\x90\x5\x4"+
 		"\x3\x2\x8F\x8E\x3\x2\x2\x2\x90\x93\x3\x2\x2\x2\x91\x8F\x3\x2\x2\x2\x91"+
-		"\x92\x3\x2\x2\x2\x92\x94\x3\x2\x2\x2\x93\x91\x3\x2\x2\x2\x94\x95\a\x1F"+
-		"\x2\x2\x95!\x3\x2\x2\x2\xE\'\x30\x34=\x41HUX\x66|~\x91";
+		"\x92\x3\x2\x2\x2\x92\x94\x3\x2\x2\x2\x93\x91\x3\x2\x2\x2\x94\x95\a \x2"+
+		"\x2\x95!\x3\x2\x2\x2\xE\'\x30\x34=\x41HUX\x66|~\x91";
 	public static readonly ATN _ATN =
 		new ATNDeserializer().Deserialize(_serializedATN.ToCharArray());
 }

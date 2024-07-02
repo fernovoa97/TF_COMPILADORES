@@ -31,7 +31,7 @@ expression
     | expression logicalOp expression   # logicalExpression
     ;
 
-multOp: '*' | '/' | '&' | 'rsd%' |'Math.Pow';
+multOp: '*' | '/' | '&' | 'rsd%' |'^^'| '^/';
 addOp: '+' | '-';
 compareOp: '==' | '!=' | '>' | '<' | '>=' | '<=';
 logicalOp: '&&' | '||' | '!';

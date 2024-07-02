@@ -91,9 +91,9 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
         };
     }
 
-private object? Add(object? left, object? right)
+ private object? Add(object? left, object? right)
 {
-    if (left is int l && right is int r)
+     if (left is int l && right is int r)
         return l + r;
     if (left is float lf && right is float rf)
         return lf + rf;
@@ -103,6 +103,15 @@ private object? Add(object? left, object? right)
         return lFloat + rInt;
     if (left is string ls && right is string rs)
         return ls + rs;
+    if (left is string ls1 && right is int rInt1)
+        return ls1 + rInt1.ToString();
+    if (left is string ls2 && right is float rFloat1)
+        return ls2 + rFloat1.ToString();
+    if (left is int lInt1 && right is string rs1)
+        return lInt1.ToString() + rs1;
+    if (left is float lf1 && right is string rs2)
+        return lf1.ToString() + rs2;
+       
     if (left is string && right != null && !(right is string))
         throw new Exception($"No se puede sumar valores del tipo {left.GetType()} y {right.GetType()}.");
     if (right is string && left != null && !(left is string))
@@ -135,10 +144,25 @@ private object? Add(object? left, object? right)
             "/" => Divide(left, right),
             "&" => And(left, right),
             "rsd%" => Mod(left, right),
-            "Math.Pow"=>Pot(left, right),
+            "^^"=>Pot(left, right),
+            "^/" => Root(left, right),
             _ => throw new NotImplementedException()
         };
     }
+    
+    private object? Root(object? left, object? right)
+{
+    if (left is int l && right is int r)
+        return (int)Math.Pow(l, 1.0 / r);  // Raíz de un entero
+    if (left is float lf && right is float rf)
+        return (float)Math.Pow(lf, 1.0 / rf);  // Raíz de un flotante
+    if (left is int lInt && right is float rFloat)
+        return (float)Math.Pow(lInt, 1.0 / rFloat);  // Raíz de un entero y un flotante
+    if (left is float lFloat && right is int rInt)
+        return (float)Math.Pow(lFloat, 1.0 / rInt);  // Raíz de un flotante y un entero
+
+    throw new Exception($"No se pudo calcular la raíz de los valores del tipo {left?.GetType()} y {right?.GetType()}.");
+}
 
     private object? Multiply(object? left, object? right)
     {
@@ -360,4 +384,11 @@ private object? Add(object? left, object? right)
     }
 
     private bool IsFalse(object? value) => !IsTrue(value);
+
+
+    public override object? VisitParenthesizedExpression(SimpleParser.ParenthesizedExpressionContext context)
+    {
+        // Simply visit the inner expression to evaluate it.
+        return Visit(context.expression());
+    }
 }
