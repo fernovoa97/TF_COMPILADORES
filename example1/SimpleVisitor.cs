@@ -91,20 +91,25 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
         };
     }
 
-    private object? Add(object? left, object? right)
-    {
-        if (left is int l && right is int r)
-            return l + r;
-        if (left is float lf && right is float rf)
-            return lf + rf;
-        if (left is int lInt && right is float rFloat)
-            return lInt + rFloat;
-        if (left is float lFloat && right is int rInt)
-            return lFloat + rInt;
-        if (left is string || right is string)
-            return $"{left}{right}";
-        throw new Exception($"No se puede sumar valores del tipo {left?.GetType()} y {right?.GetType()}.");
-    }
+private object? Add(object? left, object? right)
+{
+    if (left is int l && right is int r)
+        return l + r;
+    if (left is float lf && right is float rf)
+        return lf + rf;
+    if (left is int lInt && right is float rFloat)
+        return lInt + rFloat;
+    if (left is float lFloat && right is int rInt)
+        return lFloat + rInt;
+    if (left is string ls && right is string rs)
+        return ls + rs;
+    if (left is string && right != null && !(right is string))
+        throw new Exception($"No se puede sumar valores del tipo {left.GetType()} y {right.GetType()}.");
+    if (right is string && left != null && !(left is string))
+        throw new Exception($"No se puede sumar valores del tipo {left.GetType()} y {right.GetType()}.");
+    throw new Exception($"No se puede sumar valores del tipo {left?.GetType()} y {right?.GetType()}.");
+}
+
 
     private object? Subtract(object? left, object? right)
     {
