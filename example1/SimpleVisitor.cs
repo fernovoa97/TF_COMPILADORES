@@ -47,13 +47,13 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
         return func(args);
     }
 
-    public override object? VisitAssigment(SimpleParser.AssigmentContext context)
-    {
-        var varName = context.IDENTIFIER().GetText();
-        var value = Visit(context.expression());
-        Variables[varName] = value;
-        return null;
-    }
+    public override object? VisitAssignment(SimpleParser.AssignmentContext context)
+{
+    var varName = context.IDENTIFIER().GetText();
+    var value = Visit(context.expression());
+    Variables[varName] = value;
+    return null;
+}
 
     public override object? VisitIdentifierExpression(SimpleParser.IdentifierExpressionContext context)
     {
@@ -134,7 +134,7 @@ private object? Add(object? left, object? right)
             "*" => Multiply(left, right),
             "/" => Divide(left, right),
             "&" => And(left, right),
-            "mod%" => Mod(left, right),
+            "rsd%" => Mod(left, right),
             _ => throw new NotImplementedException()
         };
     }
@@ -182,14 +182,14 @@ private object? Add(object? left, object? right)
             return lInt % rFloat;
         if (left is float lFloat && right is int rInt)
             return lFloat % rInt;
-        throw new Exception($"No se pudo calcular el modulo de los valores del tipo {left?.GetType()} y {right?.GetType()}.");
+        throw new Exception($"No se pudo calcular el residuo de los valores del tipo {left?.GetType()} y {right?.GetType()}.");
     }
 
     private bool Or(object? left, object? right)
     {
         if (left is bool lb && right is bool rb)
             return lb || rb;
-        throw new Exception($"CNo se pudo hacer un O en los valores del tipo {left?.GetType()} y {right?.GetType()}.");
+        throw new Exception($"No se pudo hacer un O en los valores del tipo {left?.GetType()} y {right?.GetType()}.");
     }
 
     private bool Xor(object? left, object? right)
@@ -247,7 +247,7 @@ private object? Add(object? left, object? right)
             return lint < rfloat;
         if (left is float lfloat && right is int rint)
             return lfloat < rint;
-        throw new Exception($"Cannot compare values of types {left?.GetType()} and {right?.GetType()}");
+        throw new Exception($"No se puede comparar valores del tipo {left?.GetType()} and {right?.GetType()}");
     }
 
     private bool LessThanOrEqual(object? left, object? right)
@@ -260,7 +260,7 @@ private object? Add(object? left, object? right)
             return lint <= rfloat;
         if (left is float lfloat && right is int rint)
             return lfloat <= rint;
-        throw new Exception($"Cannot compare values of types {left?.GetType()} and {right?.GetType()}");
+        throw new Exception($"No se puede comparar valores del tipo {left?.GetType()} and {right?.GetType()}");
     }
 
     private bool GreaterThan(object? left, object? right)
@@ -273,7 +273,7 @@ private object? Add(object? left, object? right)
             return lint > rfloat;
         if (left is float lfloat && right is int rint)
             return lfloat > rint;
-        throw new Exception($"Cannot compare values of types {left?.GetType()} and {right?.GetType()}");
+        throw new Exception($"No se puede comparar valores del tipo {left?.GetType()} and {right?.GetType()}");
     }
 
     private bool GreaterThanOrEqual(object? left, object? right)
@@ -286,7 +286,7 @@ private object? Add(object? left, object? right)
             return lint >= rfloat;
         if (left is float lfloat && right is int rint)
             return lfloat >= rint;
-        throw new Exception($"Cannot compare values of types {left?.GetType()} and {right?.GetType()}");
+        throw new Exception($"No se puede comparar valores del tipo {left?.GetType()} and {right?.GetType()}");
     }
 
     private bool Equal(object? left, object? right)

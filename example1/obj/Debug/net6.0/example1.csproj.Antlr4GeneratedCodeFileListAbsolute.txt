@@ -1,0 +1,6 @@
+C:\Users\Alumno\Documents\TF_COMP_AVANCE\TF_COMPILADORES\example1\obj\Debug\net6.0\SimpleLexer.cs
+C:\Users\Alumno\Documents\TF_COMP_AVANCE\TF_COMPILADORES\example1\obj\Debug\net6.0\SimpleParser.cs
+C:\Users\Alumno\Documents\TF_COMP_AVANCE\TF_COMPILADORES\example1\obj\Debug\net6.0\SimpleListener.cs
+C:\Users\Alumno\Documents\TF_COMP_AVANCE\TF_COMPILADORES\example1\obj\Debug\net6.0\SimpleBaseListener.cs
+C:\Users\Alumno\Documents\TF_COMP_AVANCE\TF_COMPILADORES\example1\obj\Debug\net6.0\SimpleVisitor.cs
+C:\Users\Alumno\Documents\TF_COMP_AVANCE\TF_COMPILADORES\example1\obj\Debug\net6.0\SimpleBaseVisitor.cs
