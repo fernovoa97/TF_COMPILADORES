@@ -62,6 +62,11 @@ public class SimpleVisitor : SimpleBaseVisitor<object?>
             throw new Exception($"Variable {varName} no esta definida");
         return Variables[varName];
     }
+    public override object? VisitParenthesizedExpression(SimpleParser.ParenthesizedExpressionContext context)
+    {
+        // Simply visit the inner expression to evaluate it.
+        return Visit(context.expression());
+    }
 
     public override object? VisitConstant(SimpleParser.ConstantContext context)
     {
@@ -204,7 +209,6 @@ private object? Add(object? left, object? right)
             return lb || rb;
         throw new Exception($"No se pudo hacer un O en los valores del tipo {left?.GetType()} y {right?.GetType()}.");
     }
-
 
 
     public override object? VisitLogicalExpression(SimpleParser.LogicalExpressionContext context)
