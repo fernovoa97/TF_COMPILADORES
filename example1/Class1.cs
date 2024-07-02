@@ -3,12 +3,12 @@ using example1;
 using example1.content;
 using System;
 [assembly: CLSCompliant(false)]
-
+ 
 try
 {
     var fileName = "content\\test.ss";
     var fileContents = File.ReadAllText(fileName);
-
+ 
     var inputStream = new AntlrInputStream(fileContents);
     var simpleLexer = new SimpleLexer(inputStream);
     var commonTokenStream = new CommonTokenStream(simpleLexer);
